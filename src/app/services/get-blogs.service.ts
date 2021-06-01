@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+//En service som hämtar alla bloggar tillhörande id: 5020
 export class GetBlogsService {
 
   constructor(private httpCall: HttpClient) { }
