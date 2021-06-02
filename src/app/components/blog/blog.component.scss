@@ -1,0 +1,11 @@
+.blog-container {
+    margin-bottom: 10px;
+    padding: 3px;
+    background-color:gainsboro;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        background-color:lightgreen;
+    }
+}
