@@ -1,5 +1,9 @@
-<h1 >Hämtade bloggar</h1>
+<h1>Hämtade bloggar för </h1>
 
 <div *ngFor = 'let b of blogs'>
-    <p>{{b.title}}</p>
+    <p>{{b.id}} {{b.title}}</p>
+</div>
+
+<div>
+    <p>{{this.blogs | json}}</p>
 </div>
