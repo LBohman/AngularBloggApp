@@ -11,7 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
