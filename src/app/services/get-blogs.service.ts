@@ -30,4 +30,12 @@ export class GetBlogsService {
       this.blogs.next(JSON.parse(localStorage.getItem('blogs')));
     }
   }
+
+  getBlog(blogId: number): Blog {
+    //Hämta data från LS där listan med bloggar är sparade
+    let blogs: Blog[] = JSON.parse(localStorage.getItem('blogs'));
+
+    //Gör en sökning i listan baserat på bloggens ID
+    return blogs.filter(a => a.id == blogId)[0];
+  }
 }
