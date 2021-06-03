@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Blog } from 'src/app/models/Blog';
 
 @Component({
@@ -9,9 +10,12 @@ import { Blog } from 'src/app/models/Blog';
 export class BlogComponent implements OnInit {
   @Input() blog: Blog;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  showBlogDetail(): void {
+    this.router.navigate(['blog', this.blog.id]);
+    console.log("showBlogDetail function working...");
   }
-
 }
