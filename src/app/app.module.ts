@@ -9,6 +9,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateNewBlogComponent } from './components/create-new-blog/create-new-blog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +19,13 @@ import { BlogDetailComponent } from './components/blog-detail/blog-detail.compon
     PageNotFoundComponent,
     BlogComponent,
     BlogDetailComponent,
+    CreateNewBlogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
