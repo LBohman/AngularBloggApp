@@ -1,5 +1,6 @@
-<div class="blog-container">
+<div class="blog-container" (click)="showBlogDetail">
     <h3>
         Blog ID:{{blog.id}} - {{blog.title}}
     </h3>
+    <a [routerLink]="['blog', blog.id]">Show more</a>
 </div>
