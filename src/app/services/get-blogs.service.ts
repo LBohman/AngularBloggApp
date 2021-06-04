@@ -14,6 +14,7 @@ export class GetBlogsService {
 
   constructor(private httpCall: HttpClient) { }
 
+  //Hämta alla bloggar
   getBlogs(): void {
     let userId = 5020;
 
@@ -31,11 +32,17 @@ export class GetBlogsService {
     }
   }
 
+  //Hämta en blogg från LS
   getBlog(blogId: number): Blog {
     //Hämta data från LS där listan med bloggar är sparade
     let blogs: Blog[] = JSON.parse(localStorage.getItem('blogs'));
 
     //Gör en sökning i listan baserat på bloggens ID
     return blogs.filter(a => a.id == blogId)[0];
+  }
+
+  //Skapa en ny blogg
+  postBlog(blog: Blog): void {
+    this.httpCall.post<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/', blog);
   }
 }
