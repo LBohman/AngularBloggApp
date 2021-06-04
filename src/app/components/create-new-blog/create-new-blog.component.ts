@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Blog } from 'src/app/models/Blog';
-import { CreateNewBlogService } from 'src/app/services/create-new-blog.service';
+import { GetBlogsService } from 'src/app/services/get-blogs.service';
 
 @Component({
   selector: 'app-create-new-blog',
@@ -10,11 +10,21 @@ import { CreateNewBlogService } from 'src/app/services/create-new-blog.service';
 })
 export class CreateNewBlogComponent implements OnInit {
 
-  constructor(private blogService: CreateNewBlogService) { }
+  constructor( private fb: FormBuilder, private blogService: GetBlogsService ) { }
 
-  title = new FormControl('');
+  blogForm = this.fb.group({
+    title: ['']
+  });
+
   
   ngOnInit(): void {}
+
+  onSubmit(): void {
+    console.log(this.blogForm.value);
+    
+    }
+    
+  }
 
   // createNewBlog() {
   //   let newBlog = new Blog(this.title.value, new Date());
@@ -22,4 +32,3 @@ export class CreateNewBlogComponent implements OnInit {
   //     this.blogs.push((data));
   //   })
   // }
-}
