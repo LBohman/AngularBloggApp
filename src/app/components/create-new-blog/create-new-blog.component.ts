@@ -22,7 +22,6 @@ export class CreateNewBlogComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(blogTitle: string): void {
-    let title: string = this.blogForm.value;
     this.blogService.createNewBlog(blogTitle).subscribe((newBlog: Blog) => {
       this.blogs.push(newBlog);
       this.router.navigate(['/']);
