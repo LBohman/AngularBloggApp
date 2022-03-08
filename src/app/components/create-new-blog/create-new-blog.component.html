@@ -1,6 +1,5 @@
-<form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
-    <input type="text" placeholder="Bloggnamn" formControlName="title">
-    <button type="submit">Skapa</button>
+<form [formGroup]="blogForm" (ngSubmit)="onSubmit(blogTitle.value)">
+    <input type="text" placeholder="Ny bloggtitel" #blogTitle formControlName="title">
+    <button type="submit" [disabled]="!blogTitle.value">Skapa</button>
+    <button type="button" (click)="cancel()">Avbryt</button>
 </form>
-
-<p>{{ blogForm.value | json }}</p>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Blog } from 'src/app/models/Blog';
 import { GetBlogsService } from 'src/app/services/get-blogs.service';
 
@@ -10,8 +11,9 @@ import { GetBlogsService } from 'src/app/services/get-blogs.service';
 })
 export class CreateNewBlogComponent implements OnInit {
 
-  constructor( private fb: FormBuilder, private blogService: GetBlogsService ) { }
+  constructor( private fb: FormBuilder, private blogService: GetBlogsService, private router: Router ) { }
 
+  blogs: Blog[] = [];
   blogForm = this.fb.group({
     title: ['']
   });
@@ -19,16 +21,15 @@ export class CreateNewBlogComponent implements OnInit {
   
   ngOnInit(): void {}
 
-  onSubmit(): void {
-    console.log(this.blogForm.value);
-    
+  onSubmit(blogTitle: string): void {
+    let title: string = this.blogForm.value;
+    this.blogService.createNewBlog(blogTitle).subscribe((newBlog: Blog) => {
+      this.blogs.push(newBlog);
+      this.router.navigate(['/']);
+    })
     }
-    
-  }
 
-  // createNewBlog() {
-  //   let newBlog = new Blog(this.title.value, new Date());
-  //   this.blogService.postNewBlog(newBlog).subscribe.((data) => {
-  //     this.blogs.push((data));
-  //   })
-  // }
+    cancel(): void {
+      this.router.navigate(['/']);
+    }
+  }
