@@ -53,4 +53,8 @@ export class GetBlogsService {
     const userId = 5020;
     return this.httpCall.post<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/', {title, userId});
   }
+
+  deleteBlog(blogId: number): Observable<Blog> {
+    return this.httpCall.delete<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/'+ blogId);
+  }
 }

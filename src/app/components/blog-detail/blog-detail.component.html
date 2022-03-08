@@ -1,6 +1,7 @@
 <div>
     <a [routerLink]="['']">Back to the blogs</a>
+    <button type="button" (click)="handleBlogDelete()">Ta bort blogg</button>
     <h3>
-        Blog ID:{{blog.id}} - {{blog.title}}
+        Blogg ID:{{blog.id}} - {{blog.title}}
     </h3>
 </div>
