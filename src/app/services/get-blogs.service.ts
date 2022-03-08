@@ -18,18 +18,25 @@ export class GetBlogsService {
   getBlogs(): void {
     let userId = 5020;
 
-    if(!localStorage.getItem('blogs')) {
-      //Hämta från API:et och spara i LS
-      this.httpCall
+    this.httpCall
       .get<Blog[]>('https://mi-blogs.azurewebsites.net/api/Blogs/user/' + userId)
       .subscribe((data) => {
         this.blogs.next(data);
         localStorage.setItem('blogs', JSON.stringify(data));
       });
-    } else {
-      //Hämta data från LS
-      this.blogs.next(JSON.parse(localStorage.getItem('blogs')));
-    }
+
+    // if(!localStorage.getItem('blogs')) {
+    //   //Hämta från API:et och spara i LS
+    //   this.httpCall
+    //   .get<Blog[]>('https://mi-blogs.azurewebsites.net/api/Blogs/user/' + userId)
+    //   .subscribe((data) => {
+    //     this.blogs.next(data);
+    //     localStorage.setItem('blogs', JSON.stringify(data));
+    //   });
+    // } else {
+    //   //Hämta data från LS
+    //   this.blogs.next(JSON.parse(localStorage.getItem('blogs')));
+    // }
   }
 
   //Hämta en blogg från LS
@@ -42,7 +49,8 @@ export class GetBlogsService {
   }
 
   //Skapa en ny blogg
-  postBlog(blog: Blog): void {
-    this.httpCall.post<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/', blog);
+  createNewBlog(title: string): Observable<Blog> {
+    const userId = 5020;
+    return this.httpCall.post<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/', {title, userId});
   }
 }
