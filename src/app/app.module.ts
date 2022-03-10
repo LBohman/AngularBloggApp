@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateNewBlogComponent } from './components/create-new-blog/create-new-blog.component';
 import { PostComponent } from './components/post/post.component';
 import { CreateNewPostComponent } from './components/create-new-post/create-new-post.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CreateNewPostComponent } from './components/create-new-post/create-new-
     BlogDetailComponent,
     CreateNewBlogComponent,
     PostComponent,
-    CreateNewPostComponent
+    CreateNewPostComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
