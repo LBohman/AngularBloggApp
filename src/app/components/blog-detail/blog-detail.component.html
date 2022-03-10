@@ -4,4 +4,6 @@
     <h3>
         Blogg ID:{{blog.id}} - {{blog.title}}
     </h3>
+    <button type="button" (click)="navigateCreatePost()">Nytt inlägg</button>
+    <app-post *ngFor="let p of posts" [post]="p"></app-post>
 </div>
