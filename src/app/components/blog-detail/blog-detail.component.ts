@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Blog } from 'src/app/models/Blog';
+import { Post } from 'src/app/models/Post';
 import { GetBlogsService } from 'src/app/services/get-blogs.service';
 
 @Component({
@@ -13,9 +14,10 @@ export class BlogDetailComponent implements OnInit {
   id: number = 0;
   //Skapar ett värde blog, med datatypen Blog
   blog: Blog;
+  posts: Post[];
 
-  //Hämta parametern från url:en och ger tillgång till vår tjänst
-  constructor(private route: ActivatedRoute, private router: Router , private service: GetBlogsService) { }
+  constructor(
+    private route: ActivatedRoute, private router: Router , private service: GetBlogsService) { }
 
   ngOnInit(): void {
     //Tittar på parametern i url:en, vilket kommer vara id:et som är ett tal
@@ -24,6 +26,8 @@ export class BlogDetailComponent implements OnInit {
 
       //Via tjänsten använda id:et för att visa den specifika bloggen som önskas
       this.blog = this.service.getBlog(this.id);
+
+      this.posts = this.blog.posts;
     });
   }
 
@@ -34,4 +38,7 @@ export class BlogDetailComponent implements OnInit {
     });
   }
 
+  navigateCreatePost(): void {
+    this.router.navigate(['/create-new-post']);
+  }
 }
