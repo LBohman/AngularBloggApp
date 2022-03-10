@@ -16,6 +16,5 @@ export class BlogComponent implements OnInit {
 
   showBlogDetail(): void {
     this.router.navigate(['blog', this.blog.id]);
-    console.log("showBlogDetail function working...");
   }
 }
