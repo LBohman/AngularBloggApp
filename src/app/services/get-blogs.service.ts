@@ -12,13 +12,13 @@ export class GetBlogsService {
   private blogs = new Subject<Blog[]>();
   blogs$ = this.blogs.asObservable();
 
-  constructor(private httpCall: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   //Hämta alla bloggar
   getBlogs(): void {
     let userId = 5020;
 
-    this.httpCall
+    this.http
       .get<Blog[]>('https://mi-blogs.azurewebsites.net/api/Blogs/user/' + userId)
       .subscribe((data) => {
         this.blogs.next(data);
@@ -27,7 +27,7 @@ export class GetBlogsService {
 
     // if(!localStorage.getItem('blogs')) {
     //   //Hämta från API:et och spara i LS
-    //   this.httpCall
+    //   this.http
     //   .get<Blog[]>('https://mi-blogs.azurewebsites.net/api/Blogs/user/' + userId)
     //   .subscribe((data) => {
     //     this.blogs.next(data);
@@ -51,10 +51,15 @@ export class GetBlogsService {
   //Skapa en ny blogg
   createNewBlog(title: string): Observable<Blog> {
     const userId = 5020;
-    return this.httpCall.post<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/', {title, userId});
+    return this.http.post<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/', {title, userId});
   }
 
   deleteBlog(blogId: number): Observable<Blog> {
-    return this.httpCall.delete<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/'+ blogId);
+    return this.http.delete<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/'+ blogId);
+  }
+
+  editBlog(blogId: number, title: string): Observable<Blog> {
+    const userId = 5020;
+    return this.http.put<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/' + blogId, { blogId, title, userId });
   }
 }
