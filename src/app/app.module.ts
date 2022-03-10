@@ -11,6 +11,7 @@ import { BlogDetailComponent } from './components/blog-detail/blog-detail.compon
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateNewBlogComponent } from './components/create-new-blog/create-new-blog.component';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateNewBlogComponent } from './components/create-new-blog/create-new-
     PageNotFoundComponent,
     BlogComponent,
     BlogDetailComponent,
-    CreateNewBlogComponent
+    CreateNewBlogComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
