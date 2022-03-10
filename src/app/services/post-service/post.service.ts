@@ -10,7 +10,5 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  getPosts(blogId: number): Observable<Blog> {
-    return this.http.get<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/' + blogId)
-  }
+  
 }
