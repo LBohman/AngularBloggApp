@@ -14,6 +14,7 @@ export class Post {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.created = created;
         this.modified = newDate.toISOString();
         this.blogId = blogId;
         this.comments = [];
