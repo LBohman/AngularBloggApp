@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogDetailComponent },
   { path: 'blog/:id/post/:id', component: PostDetailComponent },
   { path: 'create-new-blog', component: CreateNewBlogComponent },
-  { path: 'create-new-post', component: CreateNewPostComponent},
+  { path: 'blog/:id/create-new-post', component: CreateNewPostComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
