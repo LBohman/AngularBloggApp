@@ -39,6 +39,6 @@ export class BlogDetailComponent implements OnInit {
   }
 
   navigateCreatePost(): void {
-    this.router.navigate(['/create-new-post']);
+    this.router.navigate(['/blog/' + this.blog.id + '/create-new-post']);
   }
 }
