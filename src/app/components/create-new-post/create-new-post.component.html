@@ -1,1 +1,6 @@
-<p>create-new-post works!</p>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit(postTitle.value, postContent.value)">
+    <input type="text" placeholder="Rubrik" #postTitle formControlName="title">
+    <textarea name="" id="" cols="30" rows="10" #postContent formControlName="content"></textarea>
+    <button type="submit" [disabled]="!postTitle.value && !postContent">Publicera</button>
+    <button type="button" (click)="cancel()">Avbryt</button>
+</form>
