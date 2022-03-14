@@ -1,22 +1,17 @@
+import { Post } from "./Post";
+
 export class Blog {
     id: number;
     title: string;
-    userId: number;
     created: Date;
-    posts: [
-        {
-            id: number;
-            blogId: number;
-            title: string;
-            content: string;
-            created: Date;
-            comments: [
-                {
-                    id: number;
-                    content: string;
-                    postId: number;
-                }
-            ]
-        }
-    ]
+    userId: number;
+    posts: Post[]
+
+    constructor( title: string, userId: number, created: Date ) {
+        this.id = 0;
+        this.title = title;
+        this.created = created;
+        this.userId = userId;
+        this.posts = [];
+    }
 }
