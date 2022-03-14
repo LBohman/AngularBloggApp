@@ -14,7 +14,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getPost(postId: number): Observable<Post> {
-    return this.http.get<Post>('https://mi-blogs.azurewebsites.net/api/Posts' + postId);
+    return this.http.get<Post>('https://mi-blogs.azurewebsites.net/api/Posts/' + postId);
   }
 
   createNewPost(post: Post): Observable<Post> {
