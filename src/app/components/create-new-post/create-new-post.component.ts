@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Post } from 'src/app/models/Post';
 import { PostService } from 'src/app/services/post-service/post.service';
@@ -40,7 +40,7 @@ export class CreateNewPostComponent implements OnInit {
       this.blogId
     );
     this.postService.createNewPost(this.newPost).subscribe((post: Post) => {
-      this.router.navigate(['blogs/', this.blogId]);
+      this.router.navigate(['blog/', this.blogId]);
     })
   }
 
