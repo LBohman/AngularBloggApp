@@ -1,1 +1,7 @@
-<p>post-detail works!</p>
+<button type="button" (click)="backToAllPosts()">Go back to all posts</button>
+<div *ngIf="post">
+    <h3>{{post.title}}</h3>
+    <p>{{post.content}}</p>
+    <h4>Comments:</h4>
+    <app-comment *ngFor="let c of comments" [comment]="c"></app-comment>
+</div>
