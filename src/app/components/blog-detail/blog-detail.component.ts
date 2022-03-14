@@ -41,4 +41,8 @@ export class BlogDetailComponent implements OnInit {
   navigateCreatePost(): void {
     this.router.navigate(['/blog/' + this.blog.id + '/create-new-post']);
   }
+
+  navigateHome(): void {
+    this.router.navigate(['']);
+  }
 }
