@@ -51,7 +51,7 @@ export class GetBlogsService {
   //Skapa en ny blogg
   createNewBlog(title: string): Observable<Blog> {
     const userId = 5020;
-    return this.http.post<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/', {title, userId});
+    return this.http.post<Blog>('https://mi-blogs.azurewebsites.net/api/Blogs/', {title, userId, created: new Date()});
   }
 
   deleteBlog(blogId: number): Observable<Blog> {
