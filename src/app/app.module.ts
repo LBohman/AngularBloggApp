@@ -14,6 +14,7 @@ import { CreateNewBlogComponent } from './components/create-new-blog/create-new-
 import { PostComponent } from './components/post/post.component';
 import { CreateNewPostComponent } from './components/create-new-post/create-new-post.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
     CreateNewBlogComponent,
     PostComponent,
     CreateNewPostComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
