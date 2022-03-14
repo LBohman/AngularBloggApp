@@ -1,5 +1,12 @@
-<form [formGroup]="blogForm" (ngSubmit)="onSubmit(blogTitle.value)">
-    <input type="text" placeholder="Ny bloggtitel" #blogTitle formControlName="title">
-    <button type="submit" [disabled]="!blogTitle.value">Skapa</button>
-    <button type="button" (click)="cancel()">Avbryt</button>
-</form>
+<main class="container">
+    <div class="mt-5 col-8 center">
+        <form [formGroup]="blogForm" (ngSubmit)="onSubmit(blogTitle.value)">
+            <label class="form-label" for="title">Bloggtitel</label>
+            <input class="form-control" name="title" type="text" placeholder="Ny bloggtitel" #blogTitle formControlName="title">
+            <div class="mt-3 spacing">
+                <button class="btn btn-success" type="submit" [disabled]="!blogTitle.value">Skapa</button>
+                <button class="btn btn-light" type="button" (click)="cancel()">Avbryt</button>
+            </div>
+        </form>
+    </div>
+</main>

@@ -1,3 +1,9 @@
-<h1>Hämtade bloggar för användare 5020</h1>
-<button type="button" (click)="navigateCreateBlog()">Skapa en ny blogg</button>
-<app-blog *ngFor="let b of blogs" [blog]="b"></app-blog>
+<main class="container">
+    <div  class="col-8 center">
+        <div class="container">
+            <h1>Hämtade bloggar för användare 5020</h1>
+            <button class="btn btn-primary" type="button" (click)="navigateCreateBlog()">Skapa en ny blogg</button>
+        </div>
+        <app-blog *ngFor="let b of blogs" [blog]="b"></app-blog>
+    </div>
+</main>

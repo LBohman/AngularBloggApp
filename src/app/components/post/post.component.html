@@ -1,3 +1,7 @@
-<h3>{{post.title}}</h3>
-<p>{{post.content}}</p>
-<button (click)="showPostDetail()">Se kommentarer</button>
+<div class="card spacing">
+    <div class="card-body">
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+        <button class="btn btn-dark" (click)="showPostDetail()">Se kommentarer</button>
+    </div>
+</div>
