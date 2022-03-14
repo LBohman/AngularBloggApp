@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Blog } from 'src/app/models/Blog';
-import { GetBlogsService } from 'src/app/services/get-blogs.service';
+import { GetBlogsService } from 'src/app/services/get-blogs-service/get-blogs.service';
 
 @Component({
   selector: 'app-create-new-blog',
