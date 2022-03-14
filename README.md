@@ -13,8 +13,7 @@ unik för dig. Det är ett tal som du behöver hitta på som ingen annan som arb
 kan ha. Detta för att kunna ta fram bara dina bloggar senare.
 Inga bilder kommer att hanteras i detta projekt utan det är bara text som kommer att finnas som
 inenhåll i inlägg och kommentarer.
-En dokumentation över endpoints och strukturer finns här: https://mi-
-blogs.azurewebsites.net/swagger/v1/swagger.json
+En dokumentation över endpoints och strukturer finns här: https://mi-blogs.azurewebsites.net/swagger/v1/swagger.json
 
 ## Betygskriterier
 
