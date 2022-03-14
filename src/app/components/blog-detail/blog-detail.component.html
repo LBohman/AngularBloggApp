@@ -1,9 +1,14 @@
-<div>
-    <a [routerLink]="['']">Back to the blogs</a>
-    <button type="button" (click)="handleBlogDelete()">Ta bort blogg</button>
-    <h3>
-        Blogg ID:{{blog.id}} - {{blog.title}}
-    </h3>
-    <button type="button" (click)="navigateCreatePost()">Nytt inlägg</button>
-    <app-post *ngFor="let p of posts" [post]="p"></app-post>
-</div>
+<main class="container">
+    <div class="col-8 center">
+        <div class="seperate">
+            <button class="btn btn-light" (click)="navigateHome()">Back to the blogs</button>
+            <button class="btn btn-danger" type="button" (click)="handleBlogDelete()">Ta bort blogg</button>
+        </div>
+        <div class="container">
+            <h3>Blogg ID:{{blog.id}} - {{blog.title}}</h3>
+            <button class="btn btn-primary" type="button" (click)="navigateCreatePost()">Nytt inlägg</button>
+        </div>
+
+        <app-post *ngFor="let p of posts" [post]="p"></app-post>
+    </div>
+</main>
