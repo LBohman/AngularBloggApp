@@ -1,4 +1,40 @@
 # Bloggar
+Ni skall i denna uppgift skapa upp ett blogsystem, tänk wordpress. Följande punkter skall ingå i
+projektet:
+- Kunna skapa en blogg
+- Kunna skapa inlägg på bloggen
+- Kunna kommentera ett inlägg
+- Kunna visa dina bloggar
+- Kunna visa inlägg på respektive blogg
+- Kunna visa kommentarer för ett inlägg
+
+När du skapar en blog behöver du ange en egenskap som heter UserId. Denna egenskap skall vara
+unik för dig. Det är ett tal som du behöver hitta på som ingen annan som arbetar med detta projekt
+kan ha. Detta för att kunna ta fram bara dina bloggar senare.
+Inga bilder kommer att hanteras i detta projekt utan det är bara text som kommer att finnas som
+inenhåll i inlägg och kommentarer.
+En dokumentation över endpoints och strukturer finns här: https://mi-
+blogs.azurewebsites.net/swagger/v1/swagger.json
+
+## Betygskriterier
+
+**För godkänt:**
+- En god kodkvalité skall användas genom hela projektet
+- Komponenter skall användas för att visa enstaka saker (som t.ex. ett inlägg)
+- Funktionaliteten i punkterna ovan finns med i applikationen
+- Använda routing för att kunna visa olika ”sidor”
+
+**För väl godkänt:**
+- Samtliga punkter för godkänt
+- Använda tjänster för att hantera data från api:t
+- Kunna ändra i ett inlägg
+- Kunna ta bort ett inlägg
+- Kunna ändra en blogg
+- Skriva något enstaka test
+
+
+
+# Bloggar
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
